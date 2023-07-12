@@ -13,7 +13,7 @@ app.use(cors())
 
 app.use(express.json())
 dbConnection()
-app.use("/url",authenticated, shortnerRouter)
+app.use("/url", shortnerRouter)
 app.use("/user" , userRouter)
 
 app.listen(PORT,()=>console.log(`server started in ${PORT}`))
