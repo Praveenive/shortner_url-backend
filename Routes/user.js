@@ -83,7 +83,7 @@ const transporter = nodemailer.createTransport({
     }
   });
   const id =  user._id.toString();
-  const activationlink =`http://localhost:3000/activate/${id}`;
+  const activationlink =`https://astounding-dango-565067.netlify.app/activate/${id}`;
   const mailOptions = {
     from: 'praveenhb0610@gmail.com',
     to: user.email,
