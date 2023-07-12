@@ -4,6 +4,7 @@ import cors from 'cors';
 import { dbConnection } from "./db.js";
 import { shortnerRouter } from "./Routes/shortURL.js";
 import { userRouter } from "./Routes/user.js";
+import { authenticated } from "./Routes/auth.js";
 
 const app =express()
 dotenv.config()
@@ -12,7 +13,7 @@ app.use(cors())
 
 app.use(express.json())
 dbConnection()
-app.use("/url",shortnerRouter)
+app.use("/url",authenticated, shortnerRouter)
 app.use("/user" , userRouter)
 
 app.listen(PORT,()=>console.log(`server started in ${PORT}`))
